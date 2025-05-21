@@ -20,14 +20,15 @@ public class Jugador : MonoBehaviour
 
     private void Update()
     {
-        //if (inTrigger && Input.GetKeyDown(KeyCode.E))
-        //{
-        //    interactables.Interactuar();
-        //}
+        if (inTrigger && Input.GetKeyDown(KeyCode.E))
+        {
+            interactables.Interactuar(gameObject);
+        }
 
-        float horizontal = joystick.Horizontal;/*Input.GetAxis("Horizontal")*/
-        float vertical = joystick.Vertical;/*Input.GetAxis("Vertical")*/;
-
+        float horizontalJ = joystick.Horizontal;/*Input.GetAxis("Horizontal")*/
+        float verticalJ = joystick.Vertical;/*Input.GetAxis("Vertical")*/;
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(horizontal, 0f, vertical);
 
         transform.Translate(movement * velocidad * Time.deltaTime);
