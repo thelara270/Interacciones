@@ -22,7 +22,7 @@ public class Puerta : MonoBehaviour, IInteractuable
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, velocidaRotacion * Time.deltaTime);
     }
 
-    public void Interactuar()
+    public void Interactuar(GameObject interactor)
     {
         estaAbierto = !estaAbierto;
 

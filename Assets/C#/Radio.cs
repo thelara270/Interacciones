@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class Radio : MonoBehaviour, IInteractuable
 {
+    [SerializeField] AudioSource sonido;
 
-    private AudioSource sonido;
-
-    void Start()
+    public void Interactuar(GameObject interactor)
     {
-        gameObject.TryGetComponent<AudioSource>(out sonido);
-    }
-
-    public void Interactuar()
-    {
-        if (sonido.enabled == false)
+        if (sonido.isPlaying == false)  
         {
-            sonido.enabled = true;
+            sonido.Play();
         }
         else
         {
-            sonido.enabled = false;
+            sonido.Pause();
         }
+
     }
 
 }

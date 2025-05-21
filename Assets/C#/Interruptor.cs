@@ -7,7 +7,7 @@ public class Interruptor : MonoBehaviour, IInteractuable
     bool encendido = false;
     [SerializeField] List<GameObject> luces;
 
-    public void Interactuar()
+    public void Interactuar(GameObject interactor)
     {
         encendido = !encendido;
 
